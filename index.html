@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Monte seu Kit de Natal · Enfeites avulsos com desconto progressivo</title>
-<meta name="description" content="Escolha os enfeites de Natal que quiser, um por um, e monte seu kit. A partir de 3 itens o desconto entra sozinho. Pedido fechado pelo WhatsApp.">
+<title>Monte seu Kit de Natal · Enfeites com frete grátis</title>
+<meta name="description" content="Enfeites de Natal com frete grátis. Compre avulso ou monte seu kit com 5% de desconto. Pagamento por Pix ou cartão.">
 <meta name="theme-color" content="#4a0b18">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Monte seu Kit de Natal">
-<meta property="og:description" content="Enfeites avulsos, kit do seu jeito e desconto progressivo a partir de 3 itens.">
+<meta property="og:description" content="Enfeites com frete grátis, kit do seu jeito e 5% de desconto a partir de 3 itens.">
 <meta property="og:image" content="https://paginapronta.github.io/natal/img/og.jpg">
 <meta property="og:url" content="https://paginapronta.github.io/natal/">
 <link rel="canonical" href="https://paginapronta.github.io/natal/">
@@ -79,10 +79,10 @@ p{margin:0}
 
 /* ---------- escada de desconto ---------- */
 .escada{margin-top:-36px;position:relative;z-index:2}
-.escada ul{list-style:none;margin:0;padding:6px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);box-shadow:var(--sombra)}
+.escada ul{list-style:none;margin:0;padding:6px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);box-shadow:var(--sombra)}
 .escada li{text-align:center;padding:12px 6px;border-radius:12px;transition:background .3s,color .3s}
-.escada li b{display:block;font-family:var(--display);font-size:clamp(19px,5.4vw,32px);color:var(--bordo);line-height:1.1;white-space:nowrap}
-.escada li span{font-size:12.5px;color:var(--tinta-suave);white-space:nowrap}
+.escada li b{display:block;font-family:var(--display);font-size:clamp(16px,4.4vw,30px);color:var(--bordo);line-height:1.1}
+.escada li span{font-size:12.5px;color:var(--tinta-suave)}
 .escada li.ok{background:var(--bordo);}
 .escada li.ok b{color:var(--ouro-claro)} .escada li.ok span{color:#f4e6e0}
 .escada p{text-align:center;font-size:13.5px;color:var(--tinta-suave);margin-top:10px}
@@ -107,9 +107,13 @@ section{padding:52px 0 0;scroll-margin-top:40px}
 .card h3{font-family:var(--texto);font-size:15px;font-weight:700;line-height:1.25}
 .card .desc{font-size:13px;color:var(--tinta-suave)}
 .card .preco{font-family:var(--display);font-size:22px;font-weight:700;color:var(--bordo);margin-top:auto;padding-top:4px}
-.card .preco small{font-family:var(--texto);font-size:12px;font-weight:500;color:var(--tinta-suave)}
 .add{width:100%;background:var(--verde);color:#fff;border:0;border-radius:12px;padding:12px 8px;font-weight:700;font-size:14.5px;transition:background .15s}
 .add:hover{background:var(--verde-esc)}
+.comprar{display:block;text-align:center;text-decoration:none;width:100%;background:var(--verde);color:#fff;border-radius:12px;padding:12px 8px;font-weight:700;font-size:14.5px;margin-bottom:6px;transition:background .15s}
+.comprar:hover{background:var(--verde-esc)}
+.add.sec{background:#fff;color:var(--verde-esc);border:2px solid var(--verde);padding:10px 6px;font-size:13.5px}
+.add.sec:hover{background:#eaf5ee}
+.card .preco small{display:block;font-family:var(--texto);font-size:12px;font-weight:700;color:var(--verde-esc);letter-spacing:.02em}
 .qtd{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;border:2px solid var(--verde);border-radius:12px;overflow:hidden;background:#fff}
 .qtd button{height:42px;border:0;background:#fff;font-size:22px;font-weight:700;color:var(--verde-esc);line-height:1}
 .qtd button:hover{background:#eaf5ee}
@@ -128,6 +132,11 @@ section{padding:52px 0 0;scroll-margin-top:40px}
 .kit .val em{font-style:normal;font-size:12px;font-weight:800;background:var(--ouro-claro);color:var(--bordo-esc);padding:3px 8px;border-radius:999px}
 .kit button{background:var(--bordo);color:#fff;border:0;border-radius:12px;padding:13px;font-weight:700}
 .kit button:hover{background:var(--bordo-claro)}
+.kit .comprar{margin:0;background:var(--bordo);padding:13px;font-size:15px}
+.kit .comprar:hover{background:var(--bordo-claro)}
+.kit button.sec{background:transparent;color:var(--bordo);padding:4px;font-weight:600;font-size:13.5px;text-decoration:underline;text-underline-offset:3px}
+.kit button.sec:hover{background:transparent;color:var(--bordo-claro)}
+.kit .botoes{display:grid;gap:8px}
 
 /* ---------- passos / faq ---------- */
 .passos{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:p}
@@ -195,6 +204,7 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
 .zap{display:flex;width:100%;align-items:center;justify-content:center;gap:10px;background:var(--verde);color:#fff;text-decoration:none;font-weight:800;font-size:17px;border-radius:14px;padding:16px}
 .zap:hover{background:var(--verde-esc)}
 .zap svg{width:22px;height:22px;fill:currentColor}
+.zap.direto svg{display:none}
 .g-pe .nota{text-align:center;font-size:12.5px;color:var(--tinta-suave);margin-top:8px}
 
 /* ---------- ampliar foto ---------- */
@@ -225,6 +235,8 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
+<!-- Utmify: captura as UTMs do anúncio e repassa para o checkout -->
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
 <body>
 
@@ -243,15 +255,15 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
       <div>
         <span class="sobre">Natal 2026 · enfeites avulsos</span>
         <h1>Monte seu kit de Natal <em>do seu jeito.</em></h1>
-        <p class="sub">Escolha enfeite por enfeite e leve só o que combina com a sua casa. A partir de 3 itens, o desconto entra sozinho no seu kit.</p>
+        <p class="sub">Escolha enfeite por enfeite e leve só o que combina com a sua casa. O frete já está no preço, e kit com 3 itens ou mais ganha 5% de desconto.</p>
         <div class="acoes">
           <a class="cta" href="#enfeites">Escolher meus enfeites →</a>
           <a class="sec" href="#kits">Sem tempo? Veja os kits prontos</a>
         </div>
         <ul class="provas">
           <li>A partir de <span data-menor-preco></span></li>
-          <li>Leve um só ou monte um kit</li>
-          <li>Pedido fechado no WhatsApp</li>
+          <li>Frete grátis</li>
+          <li>Pix ou cartão</li>
         </ul>
       </div>
       <div class="leque" aria-hidden="true">
@@ -264,14 +276,14 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
 
   <div class="escada wrap" id="descontos">
     <ul id="escada"></ul>
-    <p>Vale misturar qualquer enfeite. O desconto é aplicado sobre o kit inteiro.</p>
+    <p>Vale misturar qualquer enfeite: com 3 ou mais, o kit ganha 5% de desconto e paga um frete só.</p>
   </div>
 
   <section id="enfeites">
     <div class="wrap">
       <div class="tit">
         <h2>Escolha seus enfeites</h2>
-        <p>Toque em <b>Adicionar</b> nos que você quer. Pode levar um só ou repetir o mesmo item quantas vezes quiser.</p>
+        <p>Toque em <b>Comprar agora</b> para levar um item só, ou em <b>Adicionar ao kit</b> para juntar vários. O frete já está no preço.</p>
       </div>
       <div class="grade" id="grade"></div>
     </div>
@@ -281,7 +293,7 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
     <div class="wrap">
       <div class="tit">
         <h2>Kits prontos em um toque</h2>
-        <p>Combinações que já funcionam juntas. Um toque coloca tudo no seu kit e você ainda pode tirar ou acrescentar o que quiser.</p>
+        <p>Combinações que já funcionam juntas, com 5% de desconto e um frete só. Quer trocar algum item? Toque em personalizar.</p>
       </div>
       <div class="kits" id="kits-lista"></div>
     </div>
@@ -291,9 +303,9 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
     <div class="wrap">
       <div class="tit"><h2>Como funciona</h2></div>
       <ol class="passos">
-        <li><b>Escolha os enfeites</b><span>Adicione item por item ou comece por um kit pronto.</span></li>
-        <li><b>Veja o desconto subir</b><span>Com 3 itens ou mais, o desconto do kit aparece na hora no total.</span></li>
-        <li><b>Feche pelo WhatsApp</b><span>Seu pedido chega pronto na conversa. Pagamento e entrega são combinados ali.</span></li>
+        <li><b>Escolha os enfeites</b><span>Um enfeite avulso, um kit pronto ou um kit montado por você.</span></li>
+        <li><b>Pague por Pix ou cartão</b><span>Avulsos e kits prontos são pagos na hora, no checkout, onde você informa o endereço. Kit montado por você vai pelo WhatsApp e enviamos o link de pagamento.</span></li>
+        <li><b>Receba em casa</b><span>O frete já está incluso no preço que você vê na página.</span></li>
       </ol>
     </div>
   </section>
@@ -302,11 +314,11 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
     <div class="wrap">
       <div class="tit"><h2>Dúvidas rápidas</h2></div>
       <div class="faq">
-        <details><summary>Posso comprar só um enfeite?</summary><p>Pode. Todos os itens são vendidos separadamente. O kit é só um jeito de levar mais pagando menos.</p></details>
+        <details><summary>Posso comprar só um enfeite?</summary><p>Pode. Todos os itens são vendidos separadamente, com o frete já incluso no preço. O kit é só um jeito de levar mais pagando menos.</p></details>
         <details><summary>Como funciona o desconto do kit?</summary><p id="faq-desc"></p></details>
-        <details><summary>Como eu pago e recebo?</summary><p>Ao tocar em “Finalizar pelo WhatsApp”, seu pedido já vai escrito na mensagem. Na conversa a gente confirma a disponibilidade e combina a forma de pagamento e a entrega. Nada é cobrado aqui no site.</p></details>
+        <details><summary>Como eu pago e recebo?</summary><p>Item avulso e kit pronto: você paga na hora, por Pix ou cartão, no checkout da Appmax, e informa ali o endereço de entrega. Kit montado por você: o pedido vai escrito pelo WhatsApp e enviamos o link de pagamento com o valor do seu kit. O frete já está incluso no preço.</p></details>
         <details><summary>As imagens mostram os produtos de verdade?</summary><p>Mostram. As imagens foram feitas a partir de fotos dos próprios enfeites que estão à venda; só o cenário de fundo foi produzido digitalmente. Pequenas variações de cor e acabamento podem acontecer.</p></details>
-        <details><summary>Posso mudar o kit depois de enviar?</summary><p>Pode. É só avisar na conversa do WhatsApp antes de fechar o pagamento.</p></details>
+        <details><summary>Posso mudar o kit depois de enviar?</summary><p>Pode. É só avisar pelo WhatsApp antes de fazer o pagamento.</p></details>
       </div>
     </div>
   </section>
@@ -314,7 +326,7 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
   <div class="final">
     <div class="wrap">
       <h2 id="final-tit">O Natal chega rápido. Seu kit fica pronto em 2 minutos.</h2>
-      <p>Escolha os enfeites, veja o desconto entrar e mande o pedido pelo WhatsApp.</p>
+      <p>Escolha os enfeites, pague por Pix ou cartão e receba com frete grátis.</p>
       <a class="cta ouro" href="#enfeites">Montar meu kit agora →</a>
     </div>
   </div>
@@ -347,9 +359,9 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
     <input id="g-nome" type="text" placeholder="Seu nome (opcional)" autocomplete="given-name" maxlength="60">
     <a class="zap" id="g-zap" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-2-1.200 7.400 7.400 0 0 1-1.400-1.700c-.1-.200 0-.400.100-.500l.400-.400.200-.400a.500.500 0 0 0 0-.400l-.800-1.800c-.200-.500-.400-.400-.600-.400h-.500a.900.900 0 0 0-.700.300 2.800 2.800 0 0 0-.900 2.100 4.900 4.900 0 0 0 1 2.600 11.200 11.200 0 0 0 4.300 3.800c.600.300 1.100.400 1.400.500a3.400 3.400 0 0 0 1.600.100 2.600 2.600 0 0 0 1.700-1.200 2.100 2.100 0 0 0 .100-1.200c0-.100-.200-.200-.400-.300z"/></svg>
-      Finalizar pelo WhatsApp
+      <span id="g-zap-t">Finalizar pelo WhatsApp</span>
     </a>
-    <p class="nota">Nada é cobrado aqui. Pagamento e entrega são combinados na conversa.</p>
+    <p class="nota" id="g-nota"></p>
   </div>
 </dialog>
 
@@ -368,36 +380,36 @@ const LOJA = {
   nome: "Monte seu Natal",
   whatsapp: "551151995479",        // DDI + DDD + número, só dígitos
   cnpj: "",                        // aparece no rodapé se preenchido
-  // Desconto progressivo por quantidade de itens no kit. Para desligar: descontos: []
-  descontos: [
-    { min: 3, pct: 5 },
-    { min: 5, pct: 10 },
-    { min: 8, pct: 15 },
-  ],
-  pixelMeta: "",                   // ID do Pixel da Meta (opcional)
+  // Kit = pedido com "min" itens ou mais: ganha "pct"% de desconto, em qualquer forma de pagamento.
+  kit: { min: 3, pct: 5 },
+  // Frete já embutido nos preços: R$ "porItem" em cada item, no máximo R$ "teto" por pedido.
+  frete: { porItem: 10, teto: 20 },
+  pixelMeta: "",                   // ID do Pixel da Meta (opcional; não usar junto com o da Utmify)
+  pixelUtmify: "",                 // ID do pixel da Utmify (o valor de window.pixelId no script deles)
 };
 
-/* PREÇOS PROVISÓRIOS: troque pelo valor real de cada item. */
+/* "preco" já inclui o frete (LOJA.frete.porItem). "link" é o link de pagamento da Appmax
+   com esse mesmo valor: mudou o preço aqui? Crie um link novo na Appmax e troque aqui. */
 const PRODUTOS = [
-  { id: "bolas",      nome: "Caixa de Bolas Vermelho & Branco", preco: 34.90, img: "bolas-vermelho-branco.jpg", selo: "Caixa",
+  { id: "bolas",      nome: "Caixa de Bolas Vermelho & Branco", preco: 44.90, link: "https://pay.finaliza.shop/pl/436a13db70", img: "bolas-vermelho-branco.jpg", selo: "Caixa",
     desc: "Bolas vermelhas brilhantes e brancas com glitter e listras, já com cordão. A base da árvore pronta numa caixa só." },
-  { id: "pisca",      nome: "Pisca-Pisca LED Colorido",         preco: 19.90, img: "pisca-led.jpg", selo: "Luzes",
+  { id: "pisca",      nome: "Pisca-Pisca LED Colorido",         preco: 29.90, link: "https://pay.finaliza.shop/pl/0483c4627e", img: "pisca-led.jpg", selo: "Luzes",
     desc: "Cordão de luzes LED coloridas para a árvore, a janela ou a varanda." },
-  { id: "noel",       nome: "Papai Noel com Lanterna",          preco: 47.90, img: "noel-lanterna.jpg",
+  { id: "noel",       nome: "Papai Noel com Lanterna",          preco: 57.90, link: "https://pay.finaliza.shop/pl/dadc224eb2", img: "noel-lanterna.jpg",
     desc: "Barba de pelúcia, óculos dourados, casaco com detalhes dourados e lanterna na mão. O destaque da decoração." },
-  { id: "neve-rena",  nome: "Boneco de Neve com Chifres de Rena", preco: 16.90, img: "boneco-neve-rena.jpg",
+  { id: "neve-rena",  nome: "Boneco de Neve com Chifres de Rena", preco: 26.90, link: "https://pay.finaliza.shop/pl/1965c0b785", img: "boneco-neve-rena.jpg",
     desc: "Pelúcia com perninhas longas, laço xadrez brilhante e botões de madeira. Com alça para pendurar." },
-  { id: "rena",       nome: "Rena de Pelúcia Xadrez",           preco: 14.90, img: "rena-xadrez.jpg",
+  { id: "rena",       nome: "Rena de Pelúcia Xadrez",           preco: 24.90, link: "https://pay.finaliza.shop/pl/359202a3dd", img: "rena-xadrez.jpg",
     desc: "Rena sorridente com cachecol xadrez e botinhas. Com cordão dourado para pendurar." },
-  { id: "neve-capa",  nome: "Boneco de Neve de Capa Vermelha",  preco: 14.90, img: "boneco-neve-vermelho.jpg",
+  { id: "neve-capa",  nome: "Boneco de Neve de Capa Vermelha",  preco: 24.90, link: "https://pay.finaliza.shop/pl/22b05d2b57", img: "boneco-neve-vermelho.jpg",
     desc: "Boneco de neve com capa vermelha e dourada, gorro e cachecol estampado. Perninhas pendentes." },
-  { id: "noel-rosto", nome: "Papai Noel Barbudo",               preco: 29.90, img: "noel-rosto.jpg",
+  { id: "noel-rosto", nome: "Papai Noel Barbudo",               preco: 39.90, link: "https://pay.finaliza.shop/pl/8a2141dc87", img: "noel-rosto.jpg",
     desc: "Rostinho do Noel com barba longa de pelúcia, óculos e gorro. Com cordão para pendurar." },
-  { id: "bengalas",   nome: "Bengalas de Veludo Bordô",         preco: 19.99, img: "bengalas-veludo.jpg", selo: "2 unidades",
+  { id: "bengalas",   nome: "Bengalas de Veludo Bordô",         preco: 29.99, link: "https://pay.finaliza.shop/pl/60561b80f6", img: "bengalas-veludo.jpg", selo: "2 unidades",
     desc: "Par de bengalas aveludadas com laço de glitter dourado e cordão para pendurar." },
-  { id: "caixinhas",  nome: "Caixinhas de Presente em Veludo",  preco: 19.99, img: "caixinhas-veludo.jpg", selo: "2 unidades",
+  { id: "caixinhas",  nome: "Caixinhas de Presente em Veludo",  preco: 29.99, link: "https://pay.finaliza.shop/pl/d6e6f4a595", img: "caixinhas-veludo.jpg", selo: "2 unidades",
     desc: "Par de mini presentes em veludo bordô com fita de glitter dourado e cordão." },
-  { id: "sinos",      nome: "Sinos Dourados com Laço",          preco: 19.90, img: "sinos-dourados.jpg", selo: "Par",
+  { id: "sinos",      nome: "Sinos Dourados com Laço",          preco: 29.90, link: "https://pay.finaliza.shop/pl/cbc7bc8832", img: "sinos-dourados.jpg", selo: "Par",
     desc: "Dois sinos dourados unidos por laço de fita brilhante. Clássico para porta, guirlanda ou árvore." },
 ];
 
@@ -407,6 +419,9 @@ const KITS = [
   { nome: "Veludo & Dourado", oq: "Bengalas, caixinhas de veludo e sinos dourados.", itens: ["bengalas","caixinhas","sinos"] },
   { nome: "Leva Tudo",        oq: "Um de cada: os 10 enfeites da página com o maior desconto.", itens: PRODUTOS.map(p => p.id) },
 ];
+// Link da Appmax de cada kit pronto, na mesma ordem de KITS (valor = o que a página mostra no kit).
+const LINKS_KITS = ["https://pay.finaliza.shop/pl/840edec80c", "https://pay.finaliza.shop/pl/b7cda06a39", "https://pay.finaliza.shop/pl/14baab8834", "https://pay.finaliza.shop/pl/5f42cfcaf8"];
+KITS.forEach((k, i) => k.link = LINKS_KITS[i] || "");
 /* ============================================================ */
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -414,7 +429,14 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const brl = c => (c / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 const cent = p => Math.round(p.preco * 100);
 const P = Object.fromEntries(PRODUTOS.map(p => [p.id, p]));
-const NIVEIS = [...LOJA.descontos].sort((a, b) => a.min - b.min);
+const K = LOJA.kit, F = LOJA.frete;
+// Leva as UTMs do anúncio (utm_*, src, sck, fbclid) junto para o checkout da Appmax.
+const comUtms = link => {
+  if (!link) return link;
+  const u = new URL(link), q = new URLSearchParams(location.search);
+  q.forEach((v, k) => { if (/^(utm_|src$|sck$|fbclid$)/.test(k) && !u.searchParams.has(k)) u.searchParams.set(k, v); });
+  return u.toString();
+};
 const CHAVE = "natal-kit-v1";
 
 let kit = {};
@@ -426,11 +448,11 @@ function rastrear(ev, dados) { if (window.fbq) fbq("track", ev, dados); }
 function calc(k = kit) {
   let n = 0, sub = 0;
   for (const id in k) { n += k[id]; sub += k[id] * cent(P[id]); }
-  const nivel = [...NIVEIS].reverse().find(d => n >= d.min);
-  const prox = NIVEIS.find(d => n < d.min);
-  const pct = nivel ? nivel.pct : 0;
-  const desc = Math.round(sub * pct / 100);
-  return { n, sub, pct, desc, total: sub - desc, prox };
+  // sem o frete embutido de cada item; o pedido paga no máximo F.teto de frete
+  const base = sub - n * F.porItem * 100;
+  const pct = n >= K.min ? K.pct : 0;
+  const total = n ? Math.round(base * (100 - pct) / 100) + Math.min(n * F.porItem, F.teto) * 100 : 0;
+  return { n, sub, pct, desc: sub - total, total, falta: Math.max(0, K.min - n) };
 }
 
 function muda(id, delta) {
@@ -459,7 +481,8 @@ $("#grade").innerHTML = PRODUTOS.map((p, i) => `
     <div class="info">
       <h3>${p.nome}</h3>
       <p class="desc">${p.desc}</p>
-      <div class="preco">${brl(cent(p))}</div>
+      <div class="preco">${brl(cent(p))}<small>frete grátis</small></div>
+      ${p.link ? `<a class="comprar" href="${comUtms(p.link)}" data-pagar="${p.id}">Comprar agora</a>` : ""}
       <div data-acao="${p.id}"></div>
     </div>
   </article>`).join("");
@@ -469,27 +492,23 @@ $("#kits-lista").innerHTML = KITS.map((k, i) => {
   return `<article class="kit">
     <div class="minis">${k.itens.slice(0, 6).map(id => `<img src="img/${P[id].img}" alt="" loading="lazy" width="54" height="54">`).join("")}</div>
     <div><h3>${k.nome}</h3><p class="oq">${k.oq}</p></div>
-    <div class="val">${c.pct ? `<s>${brl(c.sub)}</s>` : ""}<b>${brl(c.total)}</b>${c.pct ? `<em>${c.pct}% OFF</em>` : ""}</div>
-    <button type="button" data-kit="${i}">Quero este kit (${c.n} itens)</button>
+    <div class="val">${c.desc ? `<s>${brl(c.sub)}</s>` : ""}<b>${brl(c.total)}</b>${c.pct ? `<em>${c.pct}% OFF</em>` : ""}</div>
+    <div class="botoes">${k.link
+      ? `<a class="comprar" href="${comUtms(k.link)}" data-pagar-kit="${i}">Comprar este kit (${c.n} itens)</a><button class="sec" type="button" data-kit="${i}">Personalizar este kit</button>`
+      : `<button type="button" data-kit="${i}">Quero este kit (${c.n} itens)</button>`}</div>
   </article>`;
 }).join("");
 
-if (NIVEIS.length) {
-  $("#escada").innerHTML = NIVEIS.map((d, i) => `<li data-nivel="${d.min}"><b>${d.pct}% OFF</b><span>${i === NIVEIS.length - 1 ? `${d.min} itens ou mais` : `com ${d.min} itens`}</span></li>`).join("");
-  $("#faq-desc").textContent = "É automático e vale para qualquer combinação: " +
-    NIVEIS.map(d => `${d.min} itens ou mais, ${d.pct}% de desconto`).join("; ") +
-    ". O desconto é calculado sobre o valor do kit inteiro e aparece no total antes de você enviar o pedido.";
-} else {
-  $("#descontos").hidden = true;
-  $("#faq-desc").closest("details").hidden = true;
-}
+$("#escada").innerHTML = `<li><b>Frete grátis</b><span>já está no preço</span></li>
+  <li data-nivel="${K.min}"><b>${K.pct}% OFF</b><span>kit com ${K.min}+ itens</span></li>
+  <li><b>Pix ou cartão</b><span>mesmo preço</span></li>`;
+$("#faq-desc").textContent = `Qualquer kit com ${K.min} itens ou mais tem ${K.pct}% de desconto, em qualquer forma de pagamento, seja um kit pronto ou montado por você. Além disso, o kit paga um frete só, então sai mais barato que comprar os mesmos itens separados.`;
 
 const hoje = new Date(), natal = new Date(hoje.getFullYear(), 11, 25);
 const dias = Math.ceil((natal - hoje) / 864e5);
-const maior = NIVEIS.length ? NIVEIS[NIVEIS.length - 1].pct : 0;
 $("#topbar").innerHTML = [
   dias > 0 ? `Faltam <b>${dias} dia${dias > 1 ? "s" : ""}</b> para o Natal` : "",
-  maior ? `Monte seu kit e ganhe até <b>${maior}% OFF</b>` : "Monte seu kit do seu jeito",
+  `<b>Frete grátis</b> · Kit com ${K.min}+ itens tem <b>${K.pct}% OFF</b>`,
 ].filter(Boolean).join(" · ");
 if (dias > 0) $("#final-tit").textContent = `Faltam ${dias} dias para o Natal. Seu kit fica pronto em 2 minutos.`;
 $("#rodape").innerHTML = `© ${hoje.getFullYear()} · ${LOJA.nome}${LOJA.cnpj ? ` · CNPJ ${LOJA.cnpj}` : ""} · <a href="https://wa.me/${LOJA.whatsapp}" target="_blank" rel="noopener">Fale com a gente no WhatsApp</a>`;
@@ -501,19 +520,17 @@ function pinta() {
   PRODUTOS.forEach(p => {
     const q = kit[p.id] || 0;
     $(`[data-card="${p.id}"]`).classList.toggle("no-kit", q > 0);
-    $(`[data-acao="${p.id}"]`).innerHTML = q ? qtdHTML(p.id, q) : `<button class="add" type="button" data-mais="${p.id}">+ Adicionar</button>`;
+    $(`[data-acao="${p.id}"]`).innerHTML = q ? qtdHTML(p.id, q) : `<button class="add${p.link ? " sec" : ""}" type="button" data-mais="${p.id}">+ Adicionar${p.link ? " ao kit" : ""}</button>`;
   });
   $$("[data-conta]").forEach(e => e.textContent = c.n);
   $$("[data-nivel]").forEach(li => li.classList.toggle("ok", c.n >= +li.dataset.nivel));
 
   // barra fixa
   $("#barra").classList.toggle("on", c.n > 0);
-  const falta = c.prox ? c.prox.min - c.n : 0;
-  $("#b-falta").textContent = !NIVEIS.length ? `${c.n} ${c.n > 1 ? "itens" : "item"} no seu kit`
-    : c.prox ? `Falta${falta > 1 ? "m" : ""} ${falta} ${falta > 1 ? "itens" : "item"} para ${c.prox.pct}% OFF`
-    : `Desconto máximo liberado: ${c.pct}% OFF`;
-  const topo = NIVEIS.length ? NIVEIS[NIVEIS.length - 1].min : 1;
-  $("#b-trilho").style.width = Math.min(100, c.n / topo * 100) + "%";
+  const falta = c.falta;
+  $("#b-falta").textContent = falta ? `Falta${falta > 1 ? "m" : ""} ${falta} ${falta > 1 ? "itens" : "item"} para ${K.pct}% OFF no kit`
+    : `Kit com ${c.pct}% OFF e um frete só`;
+  $("#b-trilho").style.width = Math.min(100, c.n / K.min * 100) + "%";
   $("#b-tot").innerHTML = `${c.n} ${c.n > 1 ? "itens" : "item"} · ${c.desc ? `<s>${brl(c.sub)}</s>` : ""}<b>${brl(c.total)}</b>`;
 
   // gaveta
@@ -529,29 +546,47 @@ function pinta() {
       <div><b>${P[id].nome}</b><small>${brl(cent(P[id]))} cada</small></div>
       ${qtdHTML(id, kit[id])}
     </div>`).join("");
-  if (c.prox) {
+  if (falta) {
     const sug = PRODUTOS.filter(p => !kit[p.id]).sort((a, b) => a.preco - b.preco).slice(0, 4);
-    html += `<div class="empurra"><p>Falta${falta > 1 ? "m" : ""} ${falta} ${falta > 1 ? "itens" : "item"} para o seu kit ganhar ${c.prox.pct}% OFF.</p>
+    html += `<div class="empurra"><p>Falta${falta > 1 ? "m" : ""} ${falta} ${falta > 1 ? "itens" : "item"} para o seu kit ganhar ${K.pct}% OFF.</p>
       ${sug.length ? `<div class="sug">${sug.map(p => `<button type="button" data-mais="${p.id}"><img src="img/${p.img}" alt="">${p.nome.split(" ").slice(0, 3).join(" ")} <span>+ ${brl(cent(p))}</span></button>`).join("")}</div>` : ""}</div>`;
   }
   $("#g-corpo").innerHTML = html;
   $("#g-sub").textContent = brl(c.sub);
   $("#g-desc-l").hidden = !c.desc;
-  $("#g-desc-t").textContent = `Desconto do kit (${c.pct}%)`;
+  $("#g-desc-t").textContent = `Economia do kit (${c.pct}% OFF e um frete só)`;
   $("#g-desc").textContent = "− " + brl(c.desc);
   $("#g-total").textContent = brl(c.total);
   linkZap();
 }
 
+// Kit de 1 item ou igual a um kit pronto tem link fixo na Appmax; o resto vai pelo WhatsApp.
+function linkDireto() {
+  const ids = Object.keys(kit);
+  if (ids.length === 1 && kit[ids[0]] === 1) return P[ids[0]].link || "";
+  const k = KITS.find(k => k.link && k.itens.length === ids.length && k.itens.every(id => kit[id] === 1));
+  return k ? k.link : "";
+}
+
 function linkZap() {
-  const c = calc(), nome = $("#g-nome").value.trim();
+  const c = calc(), nome = $("#g-nome").value.trim(), direto = linkDireto();
+  $("#g-zap").classList.toggle("direto", !!direto);
+  $("#g-nome").hidden = !!direto;
+  if (direto) {
+    $("#g-zap-t").textContent = `Pagar agora · ${brl(c.total)}`;
+    $("#g-nota").textContent = "Pix ou cartão, no checkout da Appmax. O frete já está incluso.";
+    $("#g-zap").href = comUtms(direto);
+    return;
+  }
+  $("#g-zap-t").textContent = "Finalizar pelo WhatsApp";
+  $("#g-nota").textContent = "Kit montado por você: enviamos o link de pagamento (Pix ou cartão) na conversa. O frete já está incluso.";
   let m = "Olá! Quero fechar meu kit de Natal 🎄\n\n";
   m += Object.keys(kit).map(id => `• ${kit[id]}x ${P[id].nome} — ${brl(kit[id] * cent(P[id]))}`).join("\n");
   m += `\n\nSubtotal: ${brl(c.sub)}`;
-  if (c.desc) m += `\nDesconto do kit (${c.pct}%): -${brl(c.desc)}`;
-  m += `\n*Total: ${brl(c.total)}*`;
+  if (c.desc) m += `\nEconomia do kit (${c.pct}% OFF e um frete só): -${brl(c.desc)}`;
+  m += `\n*Total com frete: ${brl(c.total)}*`;
   if (nome) m += `\n\nMeu nome: ${nome}`;
-  m += "\n\nComo faço o pagamento e a entrega?";
+  m += "\n\nPode me mandar o link de pagamento?";
   $("#g-zap").href = `https://wa.me/${LOJA.whatsapp}?text=${encodeURIComponent(m)}`;
 }
 
@@ -560,6 +595,13 @@ const gaveta = $("#gaveta"), zoom = $("#zoom");
 function abrirKit() { if (!gaveta.open) { gaveta.showModal(); rastrear("ViewContent", { content_name: "kit" }); } }
 
 document.addEventListener("click", e => {
+  const pg = e.target.closest("[data-pagar],[data-pagar-kit]");
+  if (pg) {
+    const ids = pg.dataset.pagar ? [pg.dataset.pagar] : KITS[+pg.dataset.pagarKit].itens;
+    const c = calc(Object.fromEntries(ids.map(id => [id, 1])));
+    rastrear("InitiateCheckout", { value: c.total / 100, currency: "BRL", num_items: c.n, content_ids: ids });
+    return;
+  }
   const t = e.target.closest("[data-mais],[data-menos],[data-abrir-kit],[data-fechar],[data-kit],[data-zoom]");
   if (!t) return;
   if (t.dataset.mais) muda(t.dataset.mais, 1);
@@ -584,6 +626,12 @@ $("#g-zap").addEventListener("click", () => {
   rastrear("InitiateCheckout", { value: c.total / 100, currency: "BRL", num_items: c.n, content_ids: Object.keys(kit) });
 });
 
+if (LOJA.pixelUtmify) {
+  window.pixelId = LOJA.pixelUtmify;
+  const u = document.createElement("script");
+  u.async = true; u.defer = true; u.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+  document.head.appendChild(u);
+}
 if (LOJA.pixelMeta) {
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
   fbq("init", LOJA.pixelMeta); fbq("track", "PageView");
