@@ -443,7 +443,13 @@ let kit = {};
 try { kit = JSON.parse(localStorage.getItem(CHAVE)) || {}; } catch (e) {}
 for (const id in kit) if (!P[id] || !(kit[id] > 0)) delete kit[id];
 
-function rastrear(ev, dados) { if (window.fbq) fbq("track", ev, dados); }
+// Com o pixel da Utmify ligado, PageView, ViewContent, InitiateCheckout e Purchase são dela.
+// Daqui só sai o AddToCart, para não mandar evento em dobro.
+function rastrear(ev, dados) {
+  if (!window.fbq) return;
+  if (LOJA.pixelUtmify && ev !== "AddToCart") return;
+  fbq("track", ev, dados);
+}
 
 function calc(k = kit) {
   let n = 0, sub = 0;
