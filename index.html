@@ -264,6 +264,7 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
           <li>A partir de <span data-menor-preco></span></li>
           <li>Frete grátis</li>
           <li>Pix ou cartão</li>
+          <li>Postagem em <span data-prazo></span></li>
         </ul>
       </div>
       <div class="leque" aria-hidden="true">
@@ -305,7 +306,7 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
       <ol class="passos">
         <li><b>Escolha os enfeites</b><span>Um enfeite avulso, um kit pronto ou um kit montado por você.</span></li>
         <li><b>Pague por Pix ou cartão</b><span>Avulsos e kits prontos são pagos na hora, no checkout, onde você informa o endereço. Kit montado por você vai pelo WhatsApp e enviamos o link de pagamento.</span></li>
-        <li><b>Receba em casa</b><span>O frete já está incluso no preço que você vê na página.</span></li>
+        <li><b>Receba em casa</b><span>Postamos seu pedido em <span data-prazo></span> depois do pagamento confirmado. O frete já está incluso no preço.</span></li>
       </ol>
     </div>
   </section>
@@ -317,6 +318,7 @@ dialog::backdrop{background:rgba(30,6,10,.6);backdrop-filter:blur(2px)}
         <details><summary>Posso comprar só um enfeite?</summary><p>Pode. Todos os itens são vendidos separadamente, com o frete já incluso no preço. O kit é só um jeito de levar mais pagando menos.</p></details>
         <details><summary>Como funciona o desconto do kit?</summary><p id="faq-desc"></p></details>
         <details><summary>Como eu pago e recebo?</summary><p>Item avulso e kit pronto: você paga na hora, por Pix ou cartão, no checkout da Appmax, e informa ali o endereço de entrega. Kit montado por você: o pedido vai escrito pelo WhatsApp e enviamos o link de pagamento com o valor do seu kit. O frete já está incluso no preço.</p></details>
+        <details><summary>Quando meu pedido é enviado?</summary><p>Postamos em <span data-prazo></span> depois da confirmação do pagamento. A partir da postagem, o tempo de entrega depende da sua região.</p></details>
         <details><summary>As imagens mostram os produtos de verdade?</summary><p>Mostram. As imagens foram feitas a partir de fotos dos próprios enfeites que estão à venda; só o cenário de fundo foi produzido digitalmente. Pequenas variações de cor e acabamento podem acontecer.</p></details>
         <details><summary>Posso mudar o kit depois de enviar?</summary><p>Pode. É só avisar pelo WhatsApp antes de fazer o pagamento.</p></details>
       </div>
@@ -380,6 +382,7 @@ const LOJA = {
   nome: "Monte seu Natal",
   whatsapp: "551151995479",        // DDI + DDD + número, só dígitos
   cnpj: "",                        // aparece no rodapé se preenchido
+  prazoPostagem: "até 2 dias úteis", // prazo para postar depois do pagamento confirmado
   // Kit = pedido com "min" itens ou mais: ganha "pct"% de desconto, em qualquer forma de pagamento.
   kit: { min: 3, pct: 5 },
   // Frete já embutido nos preços: R$ "porItem" em cada item, no máximo R$ "teto" por pedido.
@@ -475,6 +478,7 @@ const qtdHTML = (id, q) => `<div class="qtd"><button type="button" data-menos="$
 
 /* ---------- montagem inicial ---------- */
 $$("[data-loja-nome]").forEach(e => e.textContent = LOJA.nome);
+$$("[data-prazo]").forEach(e => e.textContent = LOJA.prazoPostagem);
 $("[data-menor-preco]").textContent = brl(Math.min(...PRODUTOS.map(cent)));
 
 $("#grade").innerHTML = PRODUTOS.map((p, i) => `
